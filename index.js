@@ -1,6 +1,7 @@
 import { ThirdwebSDK } from "@thirdweb-dev/sdk";
 import cron from "node-cron";
 import "dotenv/config";
+import { Ultron } from "@thirdweb-dev/chains";
 
 console.log(
   "Current Time " +
@@ -10,7 +11,7 @@ console.log(
 // initiate thirdwebSdk from privatekey
 const sdk = ThirdwebSDK.fromPrivateKey(
   process.env.NODE_ENV_PRIVATE_KEY,
-  "mumbai",
+  Ultron,
   {
     clientId: process.env.NODE_ENV_CLIENT_ID, // Use client id if using on the client side, get it from dashboard settings
     secretKey: process.env.NODE_ENV_SECRET_KEY, // Use secret key if using on the server, get it from dashboard settings
